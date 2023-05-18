@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student List</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student List</h1>
+    
+    <form method="POST">
+        <input type="text" name="search_name" placeholder="Search by Name" value="{{ search_name }}">
+        <input type="submit" value="Search">
+    </form>
+    
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Phone Number</th>
+        </tr>
+        {% for student in students %}
+        <tr>
+            <td>{{ student["name"] }}</td>
+            <td>{{ student["phone"] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
