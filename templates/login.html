@@ -9,15 +9,19 @@
 </head>
 
 <body>
+    {{ message }}
+    <br>
     <h1>Login</h1>    
-    {% if error_message %}
-    <p style="color: red;">{{ error_message }}</p>
-    {% endif %}
+   
+    <p style="color: red;">{{ error_message }}</p>   
 
     <form method="POST">
         User<input name="username">
         <br>
         Password <input type="password" name="password">
+        <br>
+        color <input name="color", type="color">
+        <br>
         <br>
         <input type="submit" value="Login">
     </form>
