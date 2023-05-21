@@ -28,10 +28,11 @@ def login():
 
 @app.route("/students", methods=['GET', 'POST'])
 def view_students():
-    # check if logged in. if not redirect("/")
     if not session.get("logged_in_user"):
+    # check if logged in. if not redirect("/")
         return redirect("/")
-    return render_template("students.html", students = students, logged_in_user= session.get("logged_in_user"))
+    return render_template("students.html", students = students, logged_in_user = session.get("logged_in_user"))
+
     # if request.method == 'POST':
     #     search_name = request.form.get("search_name")
     #     print({search_name})
@@ -43,9 +44,9 @@ def view_students():
 def search():
     search = request.args.get("search")
     phone = request.args.get("phone")
-    color = request.args.get("color")
+    #color = request.args.get("color")
     new_list = []
-    print(f"search-{search} phone-{phone} color-{color}")
+    print(f"search-{search} phone-{phone}")
     
     for student in students:
         print(f"student-{student}")        

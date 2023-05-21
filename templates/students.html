@@ -1,29 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Student List</title>
-    <style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-        
-        th, td {
-            padding: 8px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-    </style>
-</head>
-<body>
-    {% if logged_in_user %}    
-    <h3 style="color:{{ session.get('color') }}">Hello {{ logged_in_user }}</h3>
-    <a href="/logout">Logout</a>
-    {% endif %}
+{% extends "base.html"%}
+
+{% block content %}   
+    <h1>Student List</h1>
     <br>
 
-    <h1>Student List</h1>
-    
     <form action="/search">
         Name:<input name="search">
         Phone:<input name="phone">
@@ -43,5 +23,4 @@
         </tr>
         {% endfor %}
     </table>
-</body>
-</html>
+{% endblock %}
